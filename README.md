@@ -20,12 +20,14 @@ Repository Contents
 Documentation 
 -------------------
 
-* **[BMH23M002 Arduino Library V1.0.1 Description v100]( https://www.bestmodulescorp.com/bmh23m002.html#tab-product2 )** - Arduino Library Description.
+* **[BMH23M002 Arduino Library Description]( https://www.bestmodulescorp.com/bmh23m002.html#tab-product2 )** - Arduino Library Description.
 
 Version History  
 -------------------
-
-* **V1.0.1** - Initial public release.
+* **V1.0.1**  
+&emsp;&emsp;- Initial public release.
+* **V1.0.2**  
+&emsp;&emsp;- Modify the comment content of the setSampleRate function in the. cpp document.  
 
 License Information
 -------------------
@@ -34,8 +36,8 @@ This product is _**open source**_!
 
 Please review the LICENSE.md file for license information. 
 
-If you have any questions or concerns on licensing, please contact technical support on our BESTMODULES Email:service@bestmodulescorp.com
+If you have any questions or concerns on licensing, please contact technical support on our BEST MODULES CORP. Email:service@bestmodulescorp.com
 
 Distributed as-is; no warranty is given.
 
-BESTMODULES
+BEST MODULES CORP.

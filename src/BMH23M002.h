@@ -1,10 +1,8 @@
 /*************************************************
 File:       			BMH23M002.h
-Author:           BESTMODULES
+Author:           BEST MODULES CORP.
 Description:      Define classes and required variables
-History：			    
-V1.0.1	 -- initial version；2023-01-30；Arduino IDE : v1.8.13
-
+Version：V1.0.2   --2025-11-05
 **************************************************/ 
 
 #ifndef  _BMH23M002_I2C_H__

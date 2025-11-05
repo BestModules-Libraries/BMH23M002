@@ -1,10 +1,8 @@
 /*************************************************
 File:       			BMH23M002.cpp
-Author:           BESTMODULES
+Author:           BEST MODULES CORP.
 Description:      I2C communication with the BMH23M002 and obtain the corresponding value 
-History：			    
-V1.0.1	 -- initial version；2023-01-30；Arduino IDE :v1.8.13
-
+Version：V1.0.2   --2025-11-5
 **************************************************/
 #include "BMH23M002.h"
 
@@ -15,8 +13,8 @@ Parameters:        *thewire: Wire object if your board has more than one I2C int
               intpPin:INT Output pin connection with Arduino 
               the INT will be pulled down when data ready 
               address : Module IIC address      
-Return:           
-Others:            
+Return:       none    
+Others:       none     
 *************************************************/
 BMH23M002::BMH23M002(uint8_t intPin,TwoWire *thewire)
 {
@@ -29,8 +27,8 @@ Parameters:   *theSPI: Wire object if your board has more than one SPI interface
               intpPin:INT Output pin connection with Arduino 
                       the INT will be pulled down when data ready    
               csPin:SPI communication chip select pin 
-Return:           
-Others:     
+Return:       none    
+Others:       none
 *************************************************/
 BMH23M002::BMH23M002(uint8_t intPin,uint8_t csPin,SPIClass *theSPI)
 {
@@ -40,9 +38,9 @@ BMH23M002::BMH23M002(uint8_t intPin,uint8_t csPin,SPIClass *theSPI)
 }
 /*************************************************
 Description:   Module Initial
-Parameters:
-Return:                    
-Others:   
+Parameters:    address:i2c address
+Return:        void            
+Others:        none
 *************************************************/
 void BMH23M002::begin(uint8_t address)
 {
@@ -74,9 +72,9 @@ void BMH23M002::begin(uint8_t address)
 }
 /*************************************************
 Description:  Start ADC conversion
-Parameters:                  
-Return:            
-Others:            
+Parameters:   void               
+Return:       void     
+Others:       none     
 *************************************************/
 void  BMH23M002::beginADC()
 {
@@ -88,10 +86,10 @@ void  BMH23M002::beginADC()
 }
 /*************************************************
 Description:  read ADC convert data
-Parameters:            
+Parameters:   void         
 Return:       N:data is updated 
               0：No data updated
-Others:    
+Others:       none
 *************************************************/
 long  BMH23M002::readADCData()
 {
@@ -126,9 +124,9 @@ long  BMH23M002::readADCData()
 }
 /*************************************************
 Description:  Disable ADC function
-Parameters:            
+Parameters:   void         
 Return:       Put the module to sleep
-Others:     
+Others:       none
 *************************************************/
 void BMH23M002::endADC()
 {
@@ -140,9 +138,9 @@ void BMH23M002::endADC()
 }
 /*************************************************
 Description:  Wake up the module
-Parameters:           
-Return:            
-Others:     
+Parameters:   void        
+Return:       void     
+Others:       none
 *************************************************/
 void BMH23M002::wakeup()
 {
@@ -155,8 +153,8 @@ void BMH23M002::wakeup()
 Description:  write register
 Parameters:   regAdd:Register address 
               regData:Data written to registers      
-Return:            
-Others:       
+Return:       void     
+Others:       none
 *************************************************/
 void  BMH23M002::writeReg(uint8_t regAddr,uint8_t regData)
 {
@@ -184,7 +182,7 @@ void  BMH23M002::writeReg(uint8_t regAddr,uint8_t regData)
 Description:  Read register value
 Parameters:   regAdd:Register address        
 Return:       Register value     
-Others:  
+Others:       none
 *************************************************/
 uint8_t  BMH23M002::readReg(uint8_t regAddr)
 {
@@ -225,7 +223,7 @@ Parameters:   channel: Adc channel negative config
                       CHSP_VCM_N_VCM  0x36
                       CHSP_VTSP_N_VTSN  0x3F    
 Return:       1：Set success 0：Set fail
-Others: 
+Others:       none
 *************************************************/
 bool BMH23M002::setChannel(uint8_t channel)
 {
@@ -247,7 +245,7 @@ Parameters:   gain: GAIN_1  0x00
                     GAIN_64  0x0D
                     GAIN_128  0x0E                  
 Return:   1：Set success 0：Set fail
-Others:   
+Others:   none
 *************************************************/
 bool BMH23M002::setGain (uint8_t gain )
 {
@@ -260,16 +258,16 @@ bool BMH23M002::setGain (uint8_t gain )
 }
 /*************************************************
 Description:   set sampleRate
-Parameters:    sampleRate:RATE_5HZ  0x00  
-                          RATE_10HZ  0x01 
-                          RATE_20HZ  0x02
-                          RATE_40HZ  0x03
-                          RATE_80HZ  0x04
-                          RATE_160HZ 0x05
-                          RATE_320HZ 0x06
-                          RATE_640HZ 0x07                   
+Parameters:    sampleRate:RATE_1280HZ  0x01 
+                          RATE_640HZ  0x21
+                          RATE_320HZ  0x41
+                          RATE_160HZ  0x61
+                          RATE_80HZ  0x81
+                          RATE_40HZ  0xA1
+                          RATE_20HZ  0xC1
+                          RATE_10HZ  0xE1               
 Return:     1：Set success 0：Set fail
-Others:   
+Others:     none
 *************************************************/
 bool BMH23M002::setSampleRate (uint8_t sampleRate)
 {
@@ -284,7 +282,7 @@ bool BMH23M002::setSampleRate (uint8_t sampleRate)
 Description:  set timeOut
 Parameters:   I2CTimeOut:I2C timeout config                
 Return:       1：Set success 0：Set fail
-Others:   
+Others:       none
 *************************************************/
 bool BMH23M002::setTimeOut(uint8_t I2CTimeOut)
 {
@@ -297,9 +295,9 @@ bool BMH23M002::setTimeOut(uint8_t I2CTimeOut)
 }
 /*************************************************
 Description:  HIRCC Enable
-Parameters:            
-Return:       
-Others:    
+Parameters:   void         
+Return:       void 
+Others:       none
 *************************************************/
 void BMH23M002::HIRCCstate()
 {
@@ -322,9 +320,9 @@ void BMH23M002::HIRCCstate()
 }
 /*************************************************
 Description:  ISR
-Parameters:           
-Return:            
-Others:             
+Parameters:   void        
+Return:       void     
+Others:       none      
 *************************************************/
 void  BMH23M002::DataReady()
 {

@@ -1,9 +1,7 @@
 #######################################
 # Data types (KEYWORD1)
 #######################################
-
-BMH23M002I2C	KEYWORD1
-BMH23M002SPI	KEYWORD1
+BMH23M002	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
